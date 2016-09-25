@@ -9,6 +9,8 @@ import SplashPage from './containers/SplashPage';
 import Posts from './containers/Posts';
 import Home from './containers/HomePage';
 
+import styles from '../scss/main.scss';
+
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 

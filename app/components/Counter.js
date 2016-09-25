@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './Counter.scss';
 
 class Counter extends Component {
   static propTypes = {

@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import _ from 'lodash';
 import { Link } from 'react-router';
-import styles from './Home.scss';
-
 
 export default class Home extends Component {
   static propTypes = {
@@ -13,9 +11,7 @@ export default class Home extends Component {
     const {hexoPosts} = this.props;
     const currentPost = hexoPosts.posts[hexoPosts.selectedPostIndex];
     return (
-      <div>
-        {currentPost ? currentPost.content : 'Not Found'}
-      </div>
+      <div className="post-content" dangerouslySetInnerHTML={{ __html: currentPost ? currentPost.content : 'Not Found' }}></div>
     );
   }
 }
