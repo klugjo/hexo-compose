@@ -1,19 +1,18 @@
-import { app, BrowserWindow, Menu, shell } from 'electron';
+import { app, BrowserWindow, Menu, shell, ipcMain } from 'electron';
+
+import hexoApi from './server/hexo';
 
 let menu;
 let template;
 let mainWindow = null;
 
-
 if (process.env.NODE_ENV === 'development') {
   require('electron-debug')(); // eslint-disable-line global-require
 }
 
-
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
-
 
 const installExtensions = async () => {
   if (process.env.NODE_ENV === 'development') {
@@ -265,4 +264,14 @@ app.on('ready', async () => {
     menu = Menu.buildFromTemplate(template);
     mainWindow.setMenu(menu);
   }
+});
+
+ipcMain.on('init-hexo', (event, arg) => {
+  hexoApi.initialize().then(() => {
+    event.sender.send('init-hexo-done', {});
+  });
+});
+
+ipcMain.on('hexo-posts', (event, arg) => {
+  event.returnValue = hexoApi.getPosts();
 });
