@@ -9,9 +9,13 @@ export default class Posts extends Component {
 
 	render() {
 		return (
-			<div>
-				<SideBar />
-				{this.props.children}
+			<div className="posts-container">
+				<div className="sidebar-container">
+					<SideBar />
+				</div>
+				<div className="main-container">
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
