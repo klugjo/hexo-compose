@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import SideBar from './SideBar';
+import Home from './HomePage';
 
-export default class App extends Component {
+export default class Posts extends Component {
 	static propTypes = {
 		children: PropTypes.element
 	};

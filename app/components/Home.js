@@ -11,9 +11,10 @@ export default class Home extends Component {
 
   render() {
     const {hexoPosts} = this.props;
+    const currentPost = hexoPosts.posts[hexoPosts.selectedPostIndex];
     return (
       <div>
-        {hexoPosts.posts[hexoPosts.selectedPostIndex].content}
+        {currentPost ? currentPost.content : 'Not Found'}
       </div>
     );
   }

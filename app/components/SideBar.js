@@ -12,10 +12,11 @@ export default class SideBar extends Component {
 
 	render() {
 		const {hexoPosts, selectPost} = this.props;
+		console.log(hexoPosts);
 		return (
 			<div>
 				<div className="container">
-					<h2>Home</h2>
+					<h4>Menu</h4>
 					<ul>
 						{_.map(hexoPosts.posts, (post, index) =>
 							<li key={index} className={classnames({'selected': hexoPosts.selectedPostIndex === index})}
