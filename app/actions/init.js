@@ -1,3 +1,4 @@
+
 function getInitialState() {
 	return [
 			{name: 'Post 1', date: new Date(), content: 'Never let your guard down by thinking you’re fucking good enough. You need to sit down and sketch more fucking ideas because stalking your ex on facebook isn’t going to get you anywhere. Form follows fucking function. Nothing of value comes to you without fucking working at it. Why are you fucking reading all of this? Get back to work. Creativity is a fucking work-ethic. If you’re not being fucking honest with yourself how could you ever hope to communicate something meaningful to someone else?'},
@@ -9,12 +10,16 @@ function getInitialState() {
 		];
 }
 
-
 export const LOAD_POSTS = 'LOAD_POSTS';
 
 export function loadPosts(delay = 2000) {
-	return {
-		type: LOAD_POSTS,
-		posts: getInitialState()
+	return dispatch => {
+		setTimeout(() => {
+			console.log('loaded');
+			dispatch({
+				type: LOAD_POSTS,
+				posts: getInitialState()
+			});
+		}, delay);
 	};
 }

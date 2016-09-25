@@ -12,7 +12,6 @@ export default class SideBar extends Component {
 
 	render() {
 		const {hexoPosts, selectPost} = this.props;
-		console.log(hexoPosts);
 		return (
 			<div>
 				<div className="container">
