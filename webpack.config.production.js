@@ -8,7 +8,7 @@ const config = merge(baseConfig, {
 
   entry: [
     'babel-polyfill',
-    './app/index'
+    '.src//app/index'
   ],
 
   output: {

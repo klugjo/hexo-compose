@@ -21,7 +21,7 @@ const shouldBuildAll = argv.all || false;
 
 
 const DEFAULT_OPTS = {
-  dir: './',
+  dir: './src',
   name: appName,
   asar: shouldUseAsar,
   ignore: [

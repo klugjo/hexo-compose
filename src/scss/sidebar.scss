@@ -13,12 +13,34 @@
       margin: 5px 20px;
       padding: 10px;
       border-radius: 3px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
       &:hover {
         background: $menu-hover-bg-color;
       }
+
       &.active {
         background: $menu-selected-bg-color;
         color: $menu-selected-text-color;
+      }
+
+      .post-name {
+        flex: 0 0 250px;
+      }
+
+      .post-edit {
+        flex: 0 0 20px;
+        padding-left: 20px;
+
+        a {
+          color: $menu-text-color;
+
+          &:hover {
+            color: $menu-selected-text-color;
+          }
+        }
       }
     }
   }

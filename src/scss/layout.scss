@@ -8,8 +8,8 @@ body {
   align-items: stretch;
 
   .sidebar-container {
+    flex: 0 0 350px;
     order: 1;
-    width: 400px;
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;

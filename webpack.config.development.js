@@ -14,7 +14,7 @@ export default merge(baseConfig, {
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
     'babel-polyfill',
-    './app/index'
+    './src/app/index'
   ],
 
   output: {
@@ -30,7 +30,7 @@ export default merge(baseConfig, {
     ]
   },
   sassLoader: {
-    includePaths: [path.resolve(__dirname, "./scss")]
+    includePaths: [path.resolve(__dirname, "./src/scss")]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

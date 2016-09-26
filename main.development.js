@@ -1,6 +1,6 @@
 import { app, BrowserWindow, Menu, shell, ipcMain } from 'electron';
 
-import hexoApi from './server/hexo';
+import hexoApi from './src/server/hexo';
 
 let menu;
 let template;
@@ -40,7 +40,7 @@ app.on('ready', async () => {
     height: 728
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app/app.html`);
+  mainWindow.loadURL(`file://${__dirname}/src/app/app.html`);
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show();

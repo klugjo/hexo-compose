@@ -18,7 +18,12 @@ export default class SideBar extends Component {
 					{_.map(hexoPosts.posts, (post, index) =>
 						<li key={index} className={classnames({'selected': hexoPosts.selectedPostIndex === index})}
 							onClick={selectPost.bind(this, index)}>
-							{post.name || "Untitled"}
+							<div className="post-name">{post.name || "Untitled"}</div>
+							<div className="post-edit">
+								<Link to={`/posts/edit/${index}`}>
+									<i className="fa fa-pencil"></i>
+								</Link>
+							</div>
 						</li>
 					)}
 				</ul>

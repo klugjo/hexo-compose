@@ -1,0 +1,12 @@
+a {
+  cursor: default;
+  text-decoration: none;
+
+  &:active, &:visited, &:link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
