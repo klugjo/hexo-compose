@@ -7,7 +7,8 @@ import configureStore from './store/configureStore';
 
 import SplashPage from './containers/SplashPage';
 import Posts from './containers/Posts';
-import Home from './containers/HomePage';
+import ViewPost from './containers/ViewPostPage';
+import Editor from './containers/EditorPage';
 
 import styles from '../scss/main.scss';
 
@@ -19,7 +20,8 @@ render(
     <Router history={history}>
       <Route path="/" component={SplashPage} />
       <Route path="/posts" component={Posts} >
-        <Route path="/posts/home" component={Home} />
+        <Route path="/posts/view/:postId" component={ViewPost} />
+        <Route path="/posts/edit/:postId" component={Editor} />
       </Route>
     </Router>
   </Provider>,

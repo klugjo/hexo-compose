@@ -24,7 +24,7 @@ export class Splash extends Component {
 	componentWillReceiveProps(nextProps) {
 		console.log(nextProps);
 		if(_.get(nextProps, 'hexoPosts.postsLoaded')) {
-			this.context.router.push('/posts/home');
+			this.context.router.push(`/posts/view/${_.get(nextProps, 'hexoPosts.posts[0].id}')}`);
 		}
 	}
 

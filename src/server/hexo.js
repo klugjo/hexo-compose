@@ -3,7 +3,9 @@ import Hexo from 'hexo';
 const hexo = new Hexo('/Users/klugjo/Dev/hexo-compose-test', {});
 
 function postSerializer(post) {
+	console.log(post);
 	return {
+		id: post._id,
 		name: post.title,
 		date: new Date(),
 		content: post.content,
@@ -37,7 +39,7 @@ function getPostSource(post) {
 export default {
 	initialize: () => {
 		return hexo.init().then(() => {
-			return hexo.load()
+			return hexo.load();
 		});
 	},
 

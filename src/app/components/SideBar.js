@@ -9,6 +9,20 @@ export default class SideBar extends Component {
 		selectPost: PropTypes.func.isRequired
 	};
 
+	static contextTypes = {
+		router: React.PropTypes.object
+	};
+
+	viewPost(post) {
+		this.context.router.push(`/posts/view/${post.id}`);
+		event.stopPropagation();
+	}
+
+	editPost(post, event) {
+		this.context.router.push(`/posts/edit/${post.id}`);
+		event.stopPropagation();
+	}
+
 	render() {
 		const {hexoPosts, selectPost} = this.props;
 		return (
@@ -17,12 +31,12 @@ export default class SideBar extends Component {
 				<ul>
 					{_.map(hexoPosts.posts, (post, index) =>
 						<li key={index} className={classnames({'selected': hexoPosts.selectedPostIndex === index})}
-							onClick={selectPost.bind(this, index)}>
+							onClick={this.viewPost.bind(this, post)}>
 							<div className="post-name">{post.name || "Untitled"}</div>
 							<div className="post-edit">
-								<Link to={`/posts/edit/${index}`}>
+								<a onClick={this.editPost.bind(this, post)}>
 									<i className="fa fa-pencil"></i>
-								</Link>
+								</a>
 							</div>
 						</li>
 					)}

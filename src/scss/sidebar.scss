@@ -19,6 +19,12 @@
 
       &:hover {
         background: $menu-hover-bg-color;
+
+        .post-edit {
+          a {
+            color: $menu-text-color;
+          }
+        }
       }
 
       &.active {
@@ -35,7 +41,7 @@
         padding-left: 20px;
 
         a {
-          color: $menu-text-color;
+          color: $menu-bg-color;
 
           &:hover {
             color: $menu-selected-text-color;
