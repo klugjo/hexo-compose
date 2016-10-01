@@ -9,6 +9,9 @@ export default {
     }, {
       test: /\.json$/,
       loader: 'json-loader'
+    }, {
+      test: /\.(jpg|png)$/,
+      loader: 'file?name=[path][name].[hash].[ext]'
     }]
   },
   output: {

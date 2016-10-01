@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React, { Component, PropTypes } from 'react';
 import {browserHistory} from 'react-router';
 
+import splashImg from '../img/hexo-compose-logo.png';
+
 export class Splash extends Component {
 
 	constructor(props, context){
@@ -30,8 +32,8 @@ export class Splash extends Component {
 
 	render() {
 		return (
-			<div>
-				Splash
+			<div className="splash-container">
+				<img src={splashImg} />
 			</div>
 		);
 	}

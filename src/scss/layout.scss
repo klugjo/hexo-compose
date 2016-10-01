@@ -2,6 +2,18 @@ body {
   font-family: "Open Sans";
 }
 
+.splash-container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100vw;
+  height: 100vh;
+  background-color: $menu-bg-color;
+  img {
+    vertical-align: middle;
+  }
+}
+
 .posts-container {
   display: flex;
   flex-flow: row nowrap;
