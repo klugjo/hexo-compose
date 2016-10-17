@@ -5,9 +5,8 @@
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "main": "main.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
-    "test-watch": "npm test -- --watch",
-    "test-e2e": "cross-env NODE_ENV=test BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register --require ./test/setup.js ./test/e2e.js",
+    "test": "jest",
+    "test-watch": "jest --watch",
     "lint": "eslint app test *.js",
     "hot-server": "node -r babel-register server.js",
     "build-main": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
@@ -46,15 +45,23 @@
     "react-hot"
   ],
   "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "jest": {
+    "modulePaths": [
+      "<rootDir>",
+      "<rootDir>/src"
+    ],
+    "testRegex": "test/server/.*\\.(js|jsx)$"
+  },
   "devDependencies": {
     "asar": "^0.12.2",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
+    "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-webpack-loaders": "^0.7.1",
-    "babel-polyfill": "^6.13.0",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
@@ -84,7 +91,6 @@
     "jsdom": "^9.4.3",
     "json-loader": "^0.5.4",
     "minimist": "^1.2.0",
-    "mocha": "^3.0.2",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.10.0",
     "react-addons-test-utils": "^15.3.1",
@@ -106,6 +112,7 @@
     "electron-debug": "^1.0.1",
     "font-awesome": "^4.6.3",
     "hexo": "^3.2.2",
+    "jest": "^16.0.1",
     "lodash": "^4.16.1",
     "postcss": "^5.1.2",
     "react": "^15.3.1",
